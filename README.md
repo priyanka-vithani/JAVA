@@ -785,6 +785,15 @@ The tree diagram below shows the standard exception and error classes defined in
  
 # Homework 7
 
+Topics: 
+
+File
+File Reader
+File Writer
+Buffered Reader
+Buffered Writer
+Print Writer
+
 Tasks
 - Write a program to list all files and directories in a given directory.
 - Write a program to read the contents of a .txt file character by character using FileReader.
@@ -792,3 +801,25 @@ Tasks
 - Write a program to copy the contents of one file to another using BufferedReader and BufferedWriter.
 - Write a program to count the number of lines and words in a file using BufferedReader.
  
+# Homework 8
+
+Topics: 
+
+Thread - lightweight process
+How to create the Thread
+1. Thread class 2. Runnable interface
+
+Tasks: 
+
+Create a class that implements Runnable and prints numbers from 1 to 10. Create two threads of it and start them.
+Create a class that extends Thread and prints "Hello from thread" five times. Start two threads from this class.
+Demonstrate at least 2 constructors of the Thread class. one with no argument and one with Runnable as argument.
+Write a Java program that demonstrates the use of getName(), setName(), getState()
+Create a thread and start it. Then, try to call start() again and observe the output. Catch and print the exception message.
+Create three threads: T1, T2, and T3. Use join() such that
+- T1 starts first
+- T2 starts only after T1 completes
+- T3 starts only after T2 completes
+  Create a program that performs two independent tasks(below) in two separate threads
+- Printing even numbers
+- Printing odd numbers
