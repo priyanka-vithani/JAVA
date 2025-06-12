@@ -783,9 +783,9 @@ The tree diagram below shows the standard exception and error classes defined in
  
  
  
-# Homework 7
 
-Topics: 
+
+# Topic 7 
 
 File
 File Reader
@@ -793,7 +793,7 @@ File Writer
 Buffered Reader
 Buffered Writer
 Print Writer
-
+# Homework 7
 Tasks
 - Write a program to list all files and directories in a given directory.
 - Write a program to read the contents of a .txt file character by character using FileReader.
@@ -801,13 +801,15 @@ Tasks
 - Write a program to copy the contents of one file to another using BufferedReader and BufferedWriter.
 - Write a program to count the number of lines and words in a file using BufferedReader.
  
-# Homework 8
 
-Topics: 
+
+# Topics 8: 
 
 Thread - lightweight process
 How to create the Thread
 1. Thread class 2. Runnable interface
+
+# Homework 8
 
 Tasks: 
 
@@ -824,3 +826,89 @@ Create three threads: T1, T2, and T3. Use join() such that
 - Printing even numbers
 - Printing odd numbers
 
+
+# Topic 9
+Threadpool Demo
+
+// ThreadPool
+
+How it works?
+fixed amount threads are created and kept alive.
+tasks are submitted to the thread pool
+threads are pick up from the thread pool and execute that task
+once task has been completed then threads returns to the thread pool
+
+Why we need to use that?
+it improves the performance.
+
+Types of ThreadPool
+FixedThreadPoolExecutor - Fixed number of threads
+
+When to use this?
+
+No new task can be created after shutdown
+
+
+CachedThreadPool - It creates new thread as need.
+If any threads is in the ideal state for 60 seconds then it will automatically terminate
+
+When to use this?
+It will be used to execute small tasks
+
+SingleThreadPoolExecutor - Only one thread will be there in pool
+
+When to use this?
+If we want to perform tasks in the sequentcially.
+If ordering is matter
+Thread safety
+Real-time ex: Logs printing
+
+# Homework 9
+
+Create a fixed thread pool of size 3. Submit 5 tasks that print the current thread name and simulate some work using Thread.sleep().
+Create a cached thread pool. Submit 10 tasks and observe that threads are reused or created based on demand.
+Use a single-threaded executor to process tasks in order.
+Manually create a ThreadPoolExecutor and understand queue capacity and rejected tasks.
+Schedule a task to run every 3 seconds, regardless of how long the task takes.
+Schedule a task to run 2 seconds after the previous execution completes.
+
+# Topic 10
+ThreadGroup:
+It allows us to manage multiple threads as single unit
+Advantages:
+Collectively Manage
+Hierarchy Support
+Categorization
+
+// Synchronization : it is a process of controlling the access of multiple threads to shared resource
+methods
+block
+static
+Advantages:
+Thread safety
+Data Integrity
+
+Java Runtime Class
+
+Singleton class
+It allows to executer external command
+Get memory details
+Request to call to GC
+Exit the JVM
+
+Java Shutdown Hook
+
+
+# Homework 10
+
+
+Exercises:
+- Create a ThreadGroup named "MyGroup" and add 3 threads that print their names and group name.
+- Start 5 threads in a group and interrupt the entire group after 2 seconds using ThreadGroup.interrupt().
+- Create a BankAccount class with synchronized deposit() and withdraw() methods. Use multiple threads to operate on the same object.
+- Use Runtime.getRuntime() to print:
+    - Available processors
+    - Total memory
+    - Free memory
+- Add a shutdown hook that writes a message like "Application stopped at <time>" to the console.
+ 
