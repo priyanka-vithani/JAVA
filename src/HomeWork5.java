@@ -44,6 +44,38 @@ public class HomeWork5 {
 //            animal.sound();
 //        }
 
+//        BankAccount savings = new SavingsAccount();
+//        savings.withdraw(500);
+//
+//        BankAccount current = new CurrentAccount();
+//        current.withdraw(500);
+
+//        Student student = new Student();
+//        student.setName("Priyanka");
+//        student.setMarks(99);
+//        System.out.println("student naming " + student.getName() + " marks " + student.getMarks());
+
+        //Demonstrate type casting: (a) int to double, (b) double to int, (c) upcasting and downcasting with classes.
+
+//        int a = 10;
+//        double b = a;
+//
+//        System.out.println("int to double: "+b);
+//
+//        double pi = 3.14;
+//        int i = (int) pi;
+//        System.out.println("double to int: "+i);
+//
+//        Animal dog = new Dog();
+//        dog.sound();
+//
+//        Dog d = (Dog) dog;
+//        d.bark();
+//        d.sound();
+
+
+
+
     }
 }
 //Create a class Employee with overloaded constructors: (1) only name, (2) name and salary, (3) name, salary, and department.
@@ -192,25 +224,55 @@ class ColorPrinter extends Printer{
 //Create abstract class BankAccount with abstract method withdraw(). Extend it in SavingsAccount and CurrentAccount.
 //
 abstract class BankAccount{
+    double TotalBalance = 2000.0;
     abstract void withdraw(double amount);
 }
 
 class SavingsAccount  extends BankAccount{
+    @Override
     void withdraw(double amount){
-        System.out.println("withdraw from Savings Account");
+
+        TotalBalance -= amount;
+        System.out.println("withdraw from Savings Account: " + amount);
+        System.out.println("Remaining Balance after withdrawal from Savings Account: " + TotalBalance);
     }
 }
 
 class CurrentAccount   extends BankAccount{
+    @Override
     void withdraw(double amount){
-        System.out.println("withdraw from Current Account");
+        TotalBalance -= amount;
+        System.out.println("withdraw from Current Account: " +  amount);
+        System.out.println("Remaining Balance after withdrawal from Current Account: " + TotalBalance);
     }
 
 }
 //Create class Student with private fields. Add public getter/setter with validation (marks 0–100 only).
+
+class Student {
+    private String name;
+    private int marks;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getMarks() {
+        return marks;
+    }
+    public void setMarks(int marks) {
+        if (marks < 0 || marks > 100){
+            System.out.println("Invalid Marks");
+        }else {
+            this.marks = marks;
+        }
+    }
+}
 //
-//Demonstrate type casting: (a) int to double, (b) double to int, (c) upcasting and downcasting with classes.
 //
+
 //        Create class A with constructor printing "A". Extend it in class B, use super() and this() in constructors.
 //
 //Create method divide(int a, int b) that throws ArithmeticException if b == 0. Handle in main method.
