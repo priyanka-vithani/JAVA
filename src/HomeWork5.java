@@ -1,5 +1,8 @@
+import javax.xml.namespace.QName;
+
 public class HomeWork5 {
     public static void main(String[] args) {
+        
 //        new Employee();
 //        new Employee("Priyanka", 50000.00);
 //        new Employee("Jay", 70000.00, "Android");
@@ -73,10 +76,74 @@ public class HomeWork5 {
 //        d.bark();
 //        d.sound();
 
+//     new BaseB();
+
+//        try {
+//            double result = divide(10, 0);
+//            System.out.println("Division Result: " + result);
+//        }catch (Exception e){
+//            System.out.println("error: " + e.getMessage());
+//        }
 
 
+        //Create Integer and Double wrapper objects using autoboxing. Do arithmetic using unboxed values.
+//Integer intObj = 10;
+//Double doubleObj = 10.0;
+//System.out.println(intObj);
+//System.out.println(doubleObj + doubleObj);
+//
+//int intVal = intObj;
+//double doubleVal = doubleObj;
+//
+//System.out.println(intVal + doubleVal);
+
+//Book b1 = new Book("Java HomeWork", "Priyanka");
+//Book b2 = new Book("Java ClaWork", "Priyanka");
+//
+//System.out.println("Book 1: " + b1.toString());
+//System.out.println("Book 2: "+ b2.toString());
+//
+//System.out.println("is b1 == b2: "+b1.equals(b2));
+//System.out.println("is b1 auther == b2 auther: "+b1.author.equals(b2.author));
+//System.out.println(" is b1 title == b2 title: " + b2.title.equals(b1.title));
+//
+//System.out.println("b1 auther hash code" + b1.author.hashCode());
+//System.out.println("b2 auther hash code" + b2.author.hashCode());
+//System.out.println("b1 title hash code" + b1.title.hashCode());
+//System.out.println("b2 title hash code" + b2.title.hashCode());
+//System.out.println("b2 hash code" + b2.hashCode());
+//System.out.println("b1 hash code" + b1.hashCode());
+
+//        FinalDemo finalDemo = new FinalDemo("Priyanka");
+//        finalDemo.sayHello();
+//        finalDemo = null;
+//
+//        System.gc();
+//        System.out.println("GC Called");
+
+
+//        EmployeeClass manager = new Manager(20, "Priyanka", 123, 50000, "Java Developer" );
+//        EmployeeClass developer = new Developer("Java", "Jay", 100, 100000, "Java Developer" );
+//
+//        manager.displayDetails();
+//        manager.work();
+//
+//        developer.displayDetails();
+//        developer.work();
 
     }
+    //Create method divide(int a, int b) that throws ArithmeticException if b == 0. Handle in the main method.
+
+//    static double divide(int a,int b) throws ArithmeticException{
+//        if(b==0){
+//            throw new ArithmeticException("do not divide by zero");
+//        }else {
+//            return a/b;
+//        }
+//    }
+
+
+
 }
 //Create a class Employee with overloaded constructors: (1) only name, (2) name and salary, (3) name, salary, and department.
 class Employee{
@@ -274,13 +341,147 @@ class Student {
 //
 
 //        Create class A with constructor printing "A". Extend it in class B, use super() and this() in constructors.
+class BaseA{
+    int a;
+    BaseA(){
+        this.a = 1;
+        System.out.println("A - " + a);
+    }
+}
+class BaseB extends BaseA{
+   BaseB(){
+       super();
+       super.a = 10;
+       System.out.println("B - " + a);
+   }
+}
+
 //
-//Create method divide(int a, int b) that throws ArithmeticException if b == 0. Handle in main method.
 //
-//Create Integer and Double wrapper objects using autoboxing. Do arithmetic using unboxed values.
+
 //
 //        Override toString(), equals(), and hashCode() in class Book. Create and compare two Book objects.
+
+class Book{
+    String title;
+    String author;
+    Book(String title, String author){
+        this.title = title;
+        this.author = author;
+    }
+    @Override
+    public String toString() {
+        return "Book{" + "title=" + title + ", author=" + author + '}';
+    }
+    @Override
+    public boolean equals(Object obj) {
+        Book book = (Book) obj;
+        return this.title == book.title && this.author == book.author;
+    }
+    @Override
+    public int hashCode() {
+        return this.title.hashCode() + this.author.hashCode();
+    }
+
+}
 //
 //Create class with final variable, final method, and final class. Show example of finalize() before GC.
+
+final class FinalDemo{
+    final String name;
+
+    FinalDemo(String name){
+        this.name = name;
+    }
+
+    final  void sayHello(){
+        System.out.println("Hello" + name);
+    }
+
+//    @Override
+//    public void finalize(){
+//        System.out.println("finalize called");
+//    }
+}
 //
 //Design an employee hierarchy: Employee (base), Manager and Developer (subclasses). Use all OOP concepts.
+// Abstract Employee Class
+abstract class EmployeeClass{
+    String name;
+    int id;
+    Double salary;
+    String department;
+
+    //Constructor (Encapsutaion)
+
+    public EmployeeClass(String name, int id, double salary, String department) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+        this.department = department;
+    }
+
+    //Getters (Encapsulation)
+    public String getName(){
+        return name;
+    }
+    public int getId(){
+        return id;
+    }
+    public Double getSalary(){
+        return salary;
+    }
+    public String getDepartment(){
+        return department;
+    }
+
+    // Abstract method (Polymorphism)
+    public abstract void work();
+
+    //Concrete Method
+    public void displayDetails(){
+        System.out.println("Name: " + name + ", id: " + id + ", salary: $" + salary + ", department: " + department );
+    }
+
+}
+
+class Manager extends EmployeeClass{
+    int teamSize;
+
+    public Manager(int teamSize, String name, int id, double salary, String department) {
+        this.teamSize = teamSize;
+        super(name, id, salary, department);
+    }
+    @Override
+    public void work() {
+        System.out.println(super.name +" is the manager of team " + department + "containing team size of " + teamSize);
+    }
+}
+
+class Developer extends EmployeeClass{
+    String progLang;
+
+    public Developer(String progLang, String name, int id, double salary, String department) {
+        super(name, id, salary, department);
+        this.progLang = progLang;
+    }
+
+    @Override
+    public void work() {
+        System.out.println(super.name + " is the Developer using programming Language " + progLang);
+    }
+}
+
+//class Developer extends EmployeeClass{
+//String progLang;
+//
+//public Developer(String progLang, String name, String department, int id,  double salary){
+//    super(name,id,salary,department);
+//    this.progLang = progLang;
+//}
+//
+//@Override
+//public void work(){
+//    System.out.println(name + " is working on programming language " + progLang);
+//}
+//}

@@ -105,7 +105,6 @@ public class Main {
     }
 
     protected void finalize(){
-
         System.out.println("finalize called!");
     }
 
@@ -185,7 +184,7 @@ public class Main {
 
 //      multiCatchDemo();
 
-//      finalFinallyfinalizeDemo();
+      finalFinallyfinalizeDemo();
 
 //      Main.Outer outer = d.new Outer();
 //      Main.Outer.Inner innter =  outer.new Inner();
@@ -209,13 +208,13 @@ public class Main {
 //      innerInterface.hello();
 //      Database db = new Database();
 //      Database.Connection.add();
-        Database.Connection conn = new Database.Connection(){
-
-            @Override
-            public void connect() {
-                System.out.println("connect");
-            }
-        };
+//        Database.Connection conn = new Database.Connection(){
+//
+//            @Override
+//            public void connect() {
+//                System.out.println("connect");
+//            }
+//        };
 
     }
 }
