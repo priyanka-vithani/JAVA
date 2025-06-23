@@ -1251,28 +1251,28 @@ Program to store and display contacts sorted by phone number using TreeMap
 # Interview Questions:
 
 
-Explain the concept of OOP in Java.
-What is the difference between JDK, JRE, and JVM?
-What is the static keyword? Where is it used?
-What is the difference between == and .equals()?
-What is the difference between abstract class and interface?
-Can we override static methods?
-What is the purpose of the finalize() method?
-What is the difference between checked and unchecked exceptions?
-Can we write a try block without catch or finally?
-What is thread lifecycle in Java?
-What is a daemon thread?
-What is the difference between ArrayList and LinkedList?
-What is the difference between HashMap and Hashtable?
-What is the difference between fail-fast and fail-safe?
-How can you make a collection thread-safe?
-What are lambda expressions in Java?
-What are functional interfaces?
-What is the use of Optional?
-What are method references?
-What is the use of transient and volatile keywords?
-What is the difference between shallow copy and deep copy?
-Why is String immutable in Java?
+- Explain the concept of OOP in Java.
+- What is the difference between JDK, JRE, and JVM?
+- What is the static keyword? Where is it used?
+- What is the difference between == and .equals()?
+- What is the difference between abstract class and interface?
+- Can we override static methods?
+- What is the purpose of the finalize() method?
+- What is the difference between checked and unchecked exceptions?
+- Can we write a try block without catch or finally?
+- What is thread lifecycle in Java?
+- What is a daemon thread?
+- What is the difference between ArrayList and LinkedList?
+- What is the difference between HashMap and Hashtable?
+- What is the difference between fail-fast and fail-safe?
+- How can you make a collection thread-safe?
+- What are lambda expressions in Java?
+- What are functional interfaces?
+- What is the use of Optional?
+- What are method references?
+- What is the use of transient and volatile keywords?
+- What is the difference between shallow copy and deep copy?
+- Why is String immutable in Java?
 
 
 # Topic 15:
