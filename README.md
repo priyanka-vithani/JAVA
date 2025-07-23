@@ -1382,3 +1382,19 @@ Excercises:
 - Group names by their starting letters using HashMap.
 - Store recently opened files in order using LinkedHashMap and remove the oldest when limit exceeds.
  
+# Homework 16: 
+
+Exercises
+
+- Store two different String objects with same content as keys and observe both entries exist. (IdentityMap)
+- Create a TreeMap and find ceiling, floor, lower, and higher keys for a given number.
+- Create a task priority system where tasks with smaller numbers (higher priority) are processed first.
+- Add integers to a TreeSet and find nearest lower and higher values for a given input.
+- Sort a list of student names alphabetically using Collections.
+- Perform binary search on a sorted list of integers to find a given number using Collections.
+- Reverse the order of elements in a list of city names using Collections.
+- Sort an array of integers in ascending order using Arrays.sort().
+- Search for a number in a sorted array using Arrays.binarySearch().
+- Convert an array of strings to a list and print all elements.
+- Create a generic method that accepts an array of any type and prints its elements.
+- 

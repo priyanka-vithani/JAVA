@@ -1,9 +1,22 @@
+import java.util.Scanner;
+
 public class HomeWork6 {
     public static void main(String[] args) {
+        ConvertUserInputToInt();
+    }
 
+    //Write a program that handles NumberFormatException when converting user input to an integer.
+    public static void ConvertUserInputToInt() throws NumberFormatException{
+        try {
+            Scanner sc = new Scanner(System.in);
+            String input = sc.nextLine();
+            int a = Integer.parseInt(input);
+            System.out.println("Converted o/p::: "+a);
+        }catch (Exception e){
+            System.out.println("Exception::: "+e.getMessage());
+        }
     }
 }
-//Write a program that handles NumberFormatException when converting user input to an integer.
 //
 //Create a method that calculates square root and throws a custom NegativeNumberException if input is negative.
 //
